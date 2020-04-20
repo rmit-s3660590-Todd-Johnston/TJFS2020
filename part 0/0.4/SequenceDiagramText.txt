@@ -1,0 +1,26 @@
+title Notes Sequence Diagram
+note over browser 
+User types in note and submits,
+data is then composed by browser to be sent via POST
+end note
+browser-server HTTP POST httpsfullstack-exampleapp.herokuapp.comnew_note
+note over server server adds body from note req to notes array
+server-browser HTTP status code 302 notes
+browser-server HTTP GET httpsfullstack-exampleapp.herokuapp.comnotes
+server--browser HTML-code
+browser-server HTTP GET httpsfullstack-exampleapp.herokuapp.commain.css
+server--browser main.css
+browser-server HTTP GET httpsfullstack-exampleapp.herokuapp.commain.js
+server--browser main.js
+
+note over browser 
+browser executes js code requesting JSON data from server
+end note
+
+browser-server HTTP GET httpsfullstack-exampleapp.herokuapp.comdata.json
+server--browser [{content HTML is easy, date 2019-05-23T173031.098Z},…]
+
+note over browser 
+browser executes event handler to handle JSON data
+and render the notes
+end note

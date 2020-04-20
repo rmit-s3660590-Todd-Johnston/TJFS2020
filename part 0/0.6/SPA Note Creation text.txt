@@ -1,0 +1,9 @@
+title Spa Note Creation Sequence Diagram
+note over browser: User creates and submits note
+end note
+browser->browser: document.getElementBId('notes_form')
+browser->browser:notes.push(note)
+browser->browser:redrawNotes()
+note over browser: browser sends data with the content-type header as JSON
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server->browser:{"message":"note created"}
